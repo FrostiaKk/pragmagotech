@@ -3,11 +3,11 @@
 namespace App\Domain\Model\Fee;
 
 use App\Domain\Model\Loan\Loan;
-use App\Domain\Model\Shared\Money;
 use Decimal\Decimal;
 use RuntimeException;
+use function DI\value;
 
-class FeeCalculator
+class FeeCalculator implements FeeCalculatorInterface
 {
     public function __construct(private readonly FeeRepositoryInterface $feeRepository)
     {
