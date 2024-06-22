@@ -5,6 +5,7 @@ namespace App\Domain\Model\Fee;
 use App\Domain\Model\Loan\Loan;
 use Decimal\Decimal;
 use RuntimeException;
+
 use function DI\value;
 
 class FeeCalculator implements FeeCalculatorInterface

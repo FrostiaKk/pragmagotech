@@ -2,7 +2,8 @@
 
 namespace App\Domain\Model\Loan;
 
-enum Term: int {
+enum Term: int
+{
     case MONTHS_12 = 12;
     case MONTHS_24 = 24;
 

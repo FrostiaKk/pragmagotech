@@ -31,6 +31,6 @@ class CalculateFeeServiceTest extends TestCase
 
         $fee = $this->calculateFeeService->execute($amount, $term);
 
-        $this->assertEquals('484.50' , $fee->toString());
+        $this->assertEquals('484.50', $fee->toString());
     }
 }
