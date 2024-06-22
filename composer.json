@@ -13,6 +13,7 @@
         }
     },
     "require": {
-        "php-decimal/php-decimal": "^1.1"
+        "php-decimal/php-decimal": "^1.1",
+        "php-di/php-di": "^7.0"
     }
 }

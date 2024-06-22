@@ -3,22 +3,20 @@
 namespace App\UI\CLI\Console;
 
 use App\Application\Service\CalculateFeeService;
-use App\Infrastructure\Persistence\InMemoryFeeRepository;
-use App\Domain\Model\Fee\FeeCalculator;
 
 class CalculateFeeCommand
 {
-    public static function main()
+    private CalculateFeeService $calculateFeeService;
+
+    public function __construct(CalculateFeeService $calculateFeeService)
     {
-        $amount = '12000.50';
-        $term = 24;
+        $this->calculateFeeService = $calculateFeeService;
+    }
 
-        $feeRepository = new InMemoryFeeRepository();
-        $feeCalculator = new FeeCalculator($feeRepository);
-        $calculateFeeService = new CalculateFeeService($feeCalculator);
+    public function execute(string $amount, int $term): void
+    {
+        $fee = $this->calculateFeeService->execute($amount, $term);
 
-        $fee = $calculateFeeService->execute($amount, $term);
-
-        echo "The calculated fee is: " . $fee;
+        echo "The calculated fee is: $fee" . PHP_EOL;
     }
 }

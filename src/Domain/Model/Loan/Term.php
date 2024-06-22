@@ -10,7 +10,7 @@ enum Term: int {
     {
         $list = [];
         foreach (self::cases() as $term) {
-            $list = $term->value;
+            $list[] = $term->value;
         }
 
         return $list;
