@@ -9,7 +9,10 @@
     ],
     "autoload": {
         "psr-4": {
-            "PragmaGoTech\\Interview\\": "src/"
+            "App\\": "src"
         }
+    },
+    "require": {
+        "php-decimal/php-decimal": "^1.1"
     }
 }
